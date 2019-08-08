@@ -233,9 +233,9 @@
 			isa = PBXGroup;
 			children = (
 				39C797E022FC2D7700217E0E /* SMGLiveHomeController.h */,
-				39C797E122FC2D7700217E0E /* SMGLiveRoomController.m */,
-				39C797E222FC2D7700217E0E /* SMGLiveRoomController.h */,
 				39C797E322FC2D7700217E0E /* SMGLiveHomeController.m */,
+				39C797E222FC2D7700217E0E /* SMGLiveRoomController.h */,
+				39C797E122FC2D7700217E0E /* SMGLiveRoomController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -270,24 +270,24 @@
 		39C797ED22FC2D7700217E0E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				39C797EE22FC2D7700217E0E /* SMGRemoteMediaView.m */,
-				39C797EF22FC2D7700217E0E /* SMGSettingView.m */,
-				39C797F022FC2D7700217E0E /* SMGLocalMediaView.m */,
-				39C797F122FC2D7700217E0E /* SMGShowHudView.h */,
-				39C797F222FC2D7700217E0E /* SMGMassageCell.h */,
-				39C797F322FC2D7700217E0E /* SMGLiveChooseView.h */,
-				39C797F422FC2D7700217E0E /* SMGLiveHomeBackgroundView.m */,
-				39C797F522FC2D7700217E0E /* SMGLiveChooseButton.m */,
-				39C797F622FC2D7700217E0E /* SMGMassageView.h */,
 				39C797F722FC2D7700217E0E /* SMGSettingView.h */,
-				39C797F822FC2D7700217E0E /* SMGRemoteMediaView.h */,
-				39C797F922FC2D7700217E0E /* SMGShowHudView.m */,
+				39C797EF22FC2D7700217E0E /* SMGSettingView.m */,
 				39C797FA22FC2D7700217E0E /* SMGLocalMediaView.h */,
-				39C797FB22FC2D7700217E0E /* SMGLiveHomeBackgroundView.h */,
+				39C797F022FC2D7700217E0E /* SMGLocalMediaView.m */,
 				39C797FC22FC2D7700217E0E /* SMGLiveChooseButton.h */,
-				39C797FD22FC2D7700217E0E /* SMGLiveChooseView.m */,
-				39C797FE22FC2D7700217E0E /* SMGMassageCell.m */,
+				39C797F522FC2D7700217E0E /* SMGLiveChooseButton.m */,
+				39C797F822FC2D7700217E0E /* SMGRemoteMediaView.h */,
+				39C797EE22FC2D7700217E0E /* SMGRemoteMediaView.m */,
+				39C797F122FC2D7700217E0E /* SMGShowHudView.h */,
+				39C797F922FC2D7700217E0E /* SMGShowHudView.m */,
+				39C797FB22FC2D7700217E0E /* SMGLiveHomeBackgroundView.h */,
+				39C797F422FC2D7700217E0E /* SMGLiveHomeBackgroundView.m */,
+				39C797F622FC2D7700217E0E /* SMGMassageView.h */,
 				39C797FF22FC2D7700217E0E /* SMGMassageView.m */,
+				39C797F322FC2D7700217E0E /* SMGLiveChooseView.h */,
+				39C797FD22FC2D7700217E0E /* SMGLiveChooseView.m */,
+				39C797F222FC2D7700217E0E /* SMGMassageCell.h */,
+				39C797FE22FC2D7700217E0E /* SMGMassageCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";

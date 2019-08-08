@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "SMGVSTC"
   s.version      = "master"
+  s.platform     = :ios, "8.0"
   s.summary      = "A short description of SMGVSTC."
 
   # This description is used to generate tags and improve search results.
@@ -27,7 +28,7 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                    DESC
 
-  s.homepage     = "http://EXAMPLE/SMGVSTC"
+  s.homepage     = "https://github.com/DuanSesion/SMGVSTC"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 

@@ -7,22 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39C797B022FAD13E00217E0E /* UIImage+smgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797AF22FAD13E00217E0E /* UIImage+smgImage.m */; };
-		39C797B322FAD8B100217E0E /* SMGMassageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797B222FAD8B100217E0E /* SMGMassageView.m */; };
-		39C797B622FBF6F100217E0E /* SMGSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797B522FBF6F100217E0E /* SMGSettingView.m */; };
-		39C797B922FC0CA700217E0E /* SMGMassageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797B822FC0CA700217E0E /* SMGMassageCell.m */; };
-		39F4336622F7ECF200ED1F06 /* SMGLiveHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4336522F7ECF200ED1F06 /* SMGLiveHomeController.m */; };
-		39F4336922F7EF5200ED1F06 /* SMGImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 39F4336822F7EF5200ED1F06 /* SMGImages.bundle */; };
-		39F4336D22F7F2C200ED1F06 /* VSRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F4336B22F7F2C200ED1F06 /* VSRTC.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		39F4337222F7FA5C00ED1F06 /* SMGLiveHomeBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4337122F7FA5C00ED1F06 /* SMGLiveHomeBackgroundView.m */; };
-		39F4337522F80B5200ED1F06 /* SMGLiveChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4337422F80B5200ED1F06 /* SMGLiveChooseView.m */; };
-		39F4337822F8131200ED1F06 /* SMGLiveChooseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4337722F8131200ED1F06 /* SMGLiveChooseButton.m */; };
-		39F4337B22F82EFC00ED1F06 /* SMGLiveRoomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4337A22F82EFC00ED1F06 /* SMGLiveRoomController.m */; };
-		39F4337D22F90B3300ED1F06 /* KSCrash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39F4336A22F7F2C200ED1F06 /* KSCrash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		39F4337F22F90B3300ED1F06 /* VSRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39F4336B22F7F2C200ED1F06 /* VSRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		39F4338922F9212600ED1F06 /* SMGShowHudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4338822F9212600ED1F06 /* SMGShowHudView.m */; };
-		39F4338C22F9500C00ED1F06 /* SMGLocalMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4338B22F9500C00ED1F06 /* SMGLocalMediaView.m */; };
-		39F4338F22F9796400ED1F06 /* SMGRemoteMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F4338E22F9796400ED1F06 /* SMGRemoteMediaView.m */; };
+		39C7980022FC2D7700217E0E /* SMGLiveRoomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797E122FC2D7700217E0E /* SMGLiveRoomController.m */; };
+		39C7980122FC2D7700217E0E /* SMGLiveHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797E322FC2D7700217E0E /* SMGLiveHomeController.m */; };
+		39C7980222FC2D7700217E0E /* UIImage+smgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797E522FC2D7700217E0E /* UIImage+smgImage.m */; };
+		39C7980322FC2D7700217E0E /* VSRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797E922FC2D7700217E0E /* VSRTC.framework */; };
+		39C7980422FC2D7700217E0E /* KSCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797EA22FC2D7700217E0E /* KSCrash.framework */; };
+		39C7980522FC2D7800217E0E /* SMGImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 39C797EC22FC2D7700217E0E /* SMGImages.bundle */; };
+		39C7980622FC2D7800217E0E /* SMGRemoteMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797EE22FC2D7700217E0E /* SMGRemoteMediaView.m */; };
+		39C7980722FC2D7800217E0E /* SMGSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797EF22FC2D7700217E0E /* SMGSettingView.m */; };
+		39C7980822FC2D7800217E0E /* SMGLocalMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797F022FC2D7700217E0E /* SMGLocalMediaView.m */; };
+		39C7980922FC2D7800217E0E /* SMGLiveHomeBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797F422FC2D7700217E0E /* SMGLiveHomeBackgroundView.m */; };
+		39C7980A22FC2D7800217E0E /* SMGLiveChooseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797F522FC2D7700217E0E /* SMGLiveChooseButton.m */; };
+		39C7980B22FC2D7800217E0E /* SMGShowHudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797F922FC2D7700217E0E /* SMGShowHudView.m */; };
+		39C7980C22FC2D7800217E0E /* SMGLiveChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797FD22FC2D7700217E0E /* SMGLiveChooseView.m */; };
+		39C7980D22FC2D7800217E0E /* SMGMassageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797FE22FC2D7700217E0E /* SMGMassageCell.m */; };
+		39C7980E22FC2D7800217E0E /* SMGMassageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797FF22FC2D7700217E0E /* SMGMassageView.m */; };
+		39C7980F22FC2D8400217E0E /* VSRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797E922FC2D7700217E0E /* VSRTC.framework */; };
+		39C7981022FC2D8400217E0E /* VSRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797E922FC2D7700217E0E /* VSRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39C7981122FC2D8700217E0E /* KSCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797EA22FC2D7700217E0E /* KSCrash.framework */; };
+		39C7981222FC2D8700217E0E /* KSCrash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797EA22FC2D7700217E0E /* KSCrash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C8C906FD22F5C1C4002A96B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C906FC22F5C1C4002A96B3 /* AppDelegate.m */; };
 		C8C9070022F5C1C4002A96B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C906FF22F5C1C4002A96B3 /* ViewController.m */; };
 		C8C9070322F5C1C4002A96B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C9070122F5C1C4002A96B3 /* Main.storyboard */; };
@@ -74,8 +77,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				39F4337D22F90B3300ED1F06 /* KSCrash.framework in Embed Frameworks */,
-				39F4337F22F90B3300ED1F06 /* VSRTC.framework in Embed Frameworks */,
+				39C7981222FC2D8700217E0E /* KSCrash.framework in Embed Frameworks */,
+				39C7981022FC2D8400217E0E /* VSRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,34 +86,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		39C797AE22FAD13E00217E0E /* UIImage+smgImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+smgImage.h"; sourceTree = "<group>"; };
-		39C797AF22FAD13E00217E0E /* UIImage+smgImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+smgImage.m"; sourceTree = "<group>"; };
-		39C797B122FAD8B100217E0E /* SMGMassageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGMassageView.h; sourceTree = "<group>"; };
-		39C797B222FAD8B100217E0E /* SMGMassageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGMassageView.m; sourceTree = "<group>"; };
-		39C797B422FBF6F100217E0E /* SMGSettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGSettingView.h; sourceTree = "<group>"; };
-		39C797B522FBF6F100217E0E /* SMGSettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGSettingView.m; sourceTree = "<group>"; };
-		39C797B722FC0CA700217E0E /* SMGMassageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGMassageCell.h; sourceTree = "<group>"; };
-		39C797B822FC0CA700217E0E /* SMGMassageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGMassageCell.m; sourceTree = "<group>"; };
-		39F4336422F7ECF200ED1F06 /* SMGLiveHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGLiveHomeController.h; sourceTree = "<group>"; };
-		39F4336522F7ECF200ED1F06 /* SMGLiveHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGLiveHomeController.m; sourceTree = "<group>"; };
-		39F4336822F7EF5200ED1F06 /* SMGImages.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SMGImages.bundle; sourceTree = "<group>"; };
-		39F4336A22F7F2C200ED1F06 /* KSCrash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KSCrash.framework; sourceTree = "<group>"; };
-		39F4336B22F7F2C200ED1F06 /* VSRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VSRTC.framework; sourceTree = "<group>"; };
-		39F4336F22F7F4EF00ED1F06 /* SMGConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGConst.h; sourceTree = "<group>"; };
-		39F4337022F7FA5C00ED1F06 /* SMGLiveHomeBackgroundView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGLiveHomeBackgroundView.h; sourceTree = "<group>"; };
-		39F4337122F7FA5C00ED1F06 /* SMGLiveHomeBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGLiveHomeBackgroundView.m; sourceTree = "<group>"; };
-		39F4337322F80B5200ED1F06 /* SMGLiveChooseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGLiveChooseView.h; sourceTree = "<group>"; };
-		39F4337422F80B5200ED1F06 /* SMGLiveChooseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGLiveChooseView.m; sourceTree = "<group>"; };
-		39F4337622F8131200ED1F06 /* SMGLiveChooseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGLiveChooseButton.h; sourceTree = "<group>"; };
-		39F4337722F8131200ED1F06 /* SMGLiveChooseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGLiveChooseButton.m; sourceTree = "<group>"; };
-		39F4337922F82EFC00ED1F06 /* SMGLiveRoomController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGLiveRoomController.h; sourceTree = "<group>"; };
-		39F4337A22F82EFC00ED1F06 /* SMGLiveRoomController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGLiveRoomController.m; sourceTree = "<group>"; };
-		39F4338722F9212600ED1F06 /* SMGShowHudView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGShowHudView.h; sourceTree = "<group>"; };
-		39F4338822F9212600ED1F06 /* SMGShowHudView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGShowHudView.m; sourceTree = "<group>"; };
-		39F4338A22F9500C00ED1F06 /* SMGLocalMediaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGLocalMediaView.h; sourceTree = "<group>"; };
-		39F4338B22F9500C00ED1F06 /* SMGLocalMediaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGLocalMediaView.m; sourceTree = "<group>"; };
-		39F4338D22F9796400ED1F06 /* SMGRemoteMediaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGRemoteMediaView.h; sourceTree = "<group>"; };
-		39F4338E22F9796400ED1F06 /* SMGRemoteMediaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGRemoteMediaView.m; sourceTree = "<group>"; };
+		39C797E022FC2D7700217E0E /* SMGLiveHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGLiveHomeController.h; sourceTree = "<group>"; };
+		39C797E122FC2D7700217E0E /* SMGLiveRoomController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGLiveRoomController.m; sourceTree = "<group>"; };
+		39C797E222FC2D7700217E0E /* SMGLiveRoomController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGLiveRoomController.h; sourceTree = "<group>"; };
+		39C797E322FC2D7700217E0E /* SMGLiveHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGLiveHomeController.m; sourceTree = "<group>"; };
+		39C797E522FC2D7700217E0E /* UIImage+smgImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+smgImage.m"; sourceTree = "<group>"; };
+		39C797E622FC2D7700217E0E /* SMGConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGConst.h; sourceTree = "<group>"; };
+		39C797E722FC2D7700217E0E /* UIImage+smgImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+smgImage.h"; sourceTree = "<group>"; };
+		39C797E922FC2D7700217E0E /* VSRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VSRTC.framework; sourceTree = "<group>"; };
+		39C797EA22FC2D7700217E0E /* KSCrash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KSCrash.framework; sourceTree = "<group>"; };
+		39C797EC22FC2D7700217E0E /* SMGImages.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SMGImages.bundle; sourceTree = "<group>"; };
+		39C797EE22FC2D7700217E0E /* SMGRemoteMediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGRemoteMediaView.m; sourceTree = "<group>"; };
+		39C797EF22FC2D7700217E0E /* SMGSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGSettingView.m; sourceTree = "<group>"; };
+		39C797F022FC2D7700217E0E /* SMGLocalMediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGLocalMediaView.m; sourceTree = "<group>"; };
+		39C797F122FC2D7700217E0E /* SMGShowHudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGShowHudView.h; sourceTree = "<group>"; };
+		39C797F222FC2D7700217E0E /* SMGMassageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGMassageCell.h; sourceTree = "<group>"; };
+		39C797F322FC2D7700217E0E /* SMGLiveChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGLiveChooseView.h; sourceTree = "<group>"; };
+		39C797F422FC2D7700217E0E /* SMGLiveHomeBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGLiveHomeBackgroundView.m; sourceTree = "<group>"; };
+		39C797F522FC2D7700217E0E /* SMGLiveChooseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGLiveChooseButton.m; sourceTree = "<group>"; };
+		39C797F622FC2D7700217E0E /* SMGMassageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGMassageView.h; sourceTree = "<group>"; };
+		39C797F722FC2D7700217E0E /* SMGSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGSettingView.h; sourceTree = "<group>"; };
+		39C797F822FC2D7700217E0E /* SMGRemoteMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGRemoteMediaView.h; sourceTree = "<group>"; };
+		39C797F922FC2D7700217E0E /* SMGShowHudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGShowHudView.m; sourceTree = "<group>"; };
+		39C797FA22FC2D7700217E0E /* SMGLocalMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGLocalMediaView.h; sourceTree = "<group>"; };
+		39C797FB22FC2D7700217E0E /* SMGLiveHomeBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGLiveHomeBackgroundView.h; sourceTree = "<group>"; };
+		39C797FC22FC2D7700217E0E /* SMGLiveChooseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMGLiveChooseButton.h; sourceTree = "<group>"; };
+		39C797FD22FC2D7700217E0E /* SMGLiveChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGLiveChooseView.m; sourceTree = "<group>"; };
+		39C797FE22FC2D7700217E0E /* SMGMassageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGMassageCell.m; sourceTree = "<group>"; };
+		39C797FF22FC2D7700217E0E /* SMGMassageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGMassageView.m; sourceTree = "<group>"; };
 		C8C906F822F5C1C4002A96B3 /* DSXLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSXLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C906FB22F5C1C4002A96B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C8C906FC22F5C1C4002A96B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -204,82 +207,95 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39F4336D22F7F2C200ED1F06 /* VSRTC.framework in Frameworks */,
+				39C7981122FC2D8700217E0E /* KSCrash.framework in Frameworks */,
+				39C7980422FC2D7700217E0E /* KSCrash.framework in Frameworks */,
+				39C7980322FC2D7700217E0E /* VSRTC.framework in Frameworks */,
+				39C7980F22FC2D8400217E0E /* VSRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39F4336022F7DB6300ED1F06 /*  connect  */ = {
+		39C797DE22FC2D7700217E0E /*  connect  */ = {
 			isa = PBXGroup;
 			children = (
-				39F4336722F7EF3000ED1F06 /* Resource */,
-				C8C9080E22F5C300002A96B3 /* Frameworks */,
-				39F4336122F7DB6300ED1F06 /* Controller */,
-				39F4336222F7DB6300ED1F06 /* Model */,
-				39F4336322F7DB6300ED1F06 /* Views */,
+				39C797DF22FC2D7700217E0E /* Controller */,
+				39C797E422FC2D7700217E0E /* Model */,
+				39C797E822FC2D7700217E0E /* Frameworks */,
+				39C797EB22FC2D7700217E0E /* Resource */,
+				39C797ED22FC2D7700217E0E /* Views */,
 			);
 			path = " connect ";
 			sourceTree = "<group>";
 		};
-		39F4336122F7DB6300ED1F06 /* Controller */ = {
+		39C797DF22FC2D7700217E0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				39F4336422F7ECF200ED1F06 /* SMGLiveHomeController.h */,
-				39F4336522F7ECF200ED1F06 /* SMGLiveHomeController.m */,
-				39F4337922F82EFC00ED1F06 /* SMGLiveRoomController.h */,
-				39F4337A22F82EFC00ED1F06 /* SMGLiveRoomController.m */,
+				39C797E022FC2D7700217E0E /* SMGLiveHomeController.h */,
+				39C797E122FC2D7700217E0E /* SMGLiveRoomController.m */,
+				39C797E222FC2D7700217E0E /* SMGLiveRoomController.h */,
+				39C797E322FC2D7700217E0E /* SMGLiveHomeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		39F4336222F7DB6300ED1F06 /* Model */ = {
+		39C797E422FC2D7700217E0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				39F4336F22F7F4EF00ED1F06 /* SMGConst.h */,
-				39C797AE22FAD13E00217E0E /* UIImage+smgImage.h */,
-				39C797AF22FAD13E00217E0E /* UIImage+smgImage.m */,
+				39C797E522FC2D7700217E0E /* UIImage+smgImage.m */,
+				39C797E622FC2D7700217E0E /* SMGConst.h */,
+				39C797E722FC2D7700217E0E /* UIImage+smgImage.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		39F4336322F7DB6300ED1F06 /* Views */ = {
+		39C797E822FC2D7700217E0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				39F4337022F7FA5C00ED1F06 /* SMGLiveHomeBackgroundView.h */,
-				39F4337122F7FA5C00ED1F06 /* SMGLiveHomeBackgroundView.m */,
-				39F4337322F80B5200ED1F06 /* SMGLiveChooseView.h */,
-				39F4337422F80B5200ED1F06 /* SMGLiveChooseView.m */,
-				39F4337622F8131200ED1F06 /* SMGLiveChooseButton.h */,
-				39F4337722F8131200ED1F06 /* SMGLiveChooseButton.m */,
-				39F4338A22F9500C00ED1F06 /* SMGLocalMediaView.h */,
-				39F4338B22F9500C00ED1F06 /* SMGLocalMediaView.m */,
-				39F4338D22F9796400ED1F06 /* SMGRemoteMediaView.h */,
-				39F4338E22F9796400ED1F06 /* SMGRemoteMediaView.m */,
-				39F4338722F9212600ED1F06 /* SMGShowHudView.h */,
-				39F4338822F9212600ED1F06 /* SMGShowHudView.m */,
-				39C797B122FAD8B100217E0E /* SMGMassageView.h */,
-				39C797B222FAD8B100217E0E /* SMGMassageView.m */,
-				39C797B422FBF6F100217E0E /* SMGSettingView.h */,
-				39C797B522FBF6F100217E0E /* SMGSettingView.m */,
-				39C797B722FC0CA700217E0E /* SMGMassageCell.h */,
-				39C797B822FC0CA700217E0E /* SMGMassageCell.m */,
+				39C797E922FC2D7700217E0E /* VSRTC.framework */,
+				39C797EA22FC2D7700217E0E /* KSCrash.framework */,
 			);
-			path = Views;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		39F4336722F7EF3000ED1F06 /* Resource */ = {
+		39C797EB22FC2D7700217E0E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				39F4336822F7EF5200ED1F06 /* SMGImages.bundle */,
+				39C797EC22FC2D7700217E0E /* SMGImages.bundle */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		39C797ED22FC2D7700217E0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				39C797EE22FC2D7700217E0E /* SMGRemoteMediaView.m */,
+				39C797EF22FC2D7700217E0E /* SMGSettingView.m */,
+				39C797F022FC2D7700217E0E /* SMGLocalMediaView.m */,
+				39C797F122FC2D7700217E0E /* SMGShowHudView.h */,
+				39C797F222FC2D7700217E0E /* SMGMassageCell.h */,
+				39C797F322FC2D7700217E0E /* SMGLiveChooseView.h */,
+				39C797F422FC2D7700217E0E /* SMGLiveHomeBackgroundView.m */,
+				39C797F522FC2D7700217E0E /* SMGLiveChooseButton.m */,
+				39C797F622FC2D7700217E0E /* SMGMassageView.h */,
+				39C797F722FC2D7700217E0E /* SMGSettingView.h */,
+				39C797F822FC2D7700217E0E /* SMGRemoteMediaView.h */,
+				39C797F922FC2D7700217E0E /* SMGShowHudView.m */,
+				39C797FA22FC2D7700217E0E /* SMGLocalMediaView.h */,
+				39C797FB22FC2D7700217E0E /* SMGLiveHomeBackgroundView.h */,
+				39C797FC22FC2D7700217E0E /* SMGLiveChooseButton.h */,
+				39C797FD22FC2D7700217E0E /* SMGLiveChooseView.m */,
+				39C797FE22FC2D7700217E0E /* SMGMassageCell.m */,
+				39C797FF22FC2D7700217E0E /* SMGMassageView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C8C906EF22F5C1C4002A96B3 = {
 			isa = PBXGroup;
 			children = (
+				39C797DE22FC2D7700217E0E /*  connect  */,
 				C8C906FA22F5C1C4002A96B3 /* DSXLive */,
 				C8C906F922F5C1C4002A96B3 /* Products */,
 				C8C9080B22F5C2DB002A96B3 /* Frameworks */,
@@ -297,7 +313,6 @@
 		C8C906FA22F5C1C4002A96B3 /* DSXLive */ = {
 			isa = PBXGroup;
 			children = (
-				39F4336022F7DB6300ED1F06 /*  connect  */,
 				C8C9075E22F5C1DB002A96B3 /* Demo */,
 				C8C906FB22F5C1C4002A96B3 /* AppDelegate.h */,
 				C8C906FC22F5C1C4002A96B3 /* AppDelegate.m */,
@@ -514,15 +529,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C8C9080E22F5C300002A96B3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				39F4336A22F7F2C200ED1F06 /* KSCrash.framework */,
-				39F4336B22F7F2C200ED1F06 /* VSRTC.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -583,7 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C9070822F5C1C4002A96B3 /* LaunchScreen.storyboard in Resources */,
-				39F4336922F7EF5200ED1F06 /* SMGImages.bundle in Resources */,
+				39C7980522FC2D7800217E0E /* SMGImages.bundle in Resources */,
 				C8C907FD22F5C203002A96B3 /* entypo.ttf in Resources */,
 				C8C9070522F5C1C4002A96B3 /* Assets.xcassets in Resources */,
 				C8C907FF22F5C203002A96B3 /* material-design-icons.ttf in Resources */,
@@ -601,48 +607,48 @@
 				C8C907FB22F5C203002A96B3 /* MaterialDesignColor.m in Sources */,
 				C8C9080222F5C203002A96B3 /* TWSReleaseNotesView.m in Sources */,
 				C8C907F322F5C203002A96B3 /* ScannerVC.m in Sources */,
-				39C797B022FAD13E00217E0E /* UIImage+smgImage.m in Sources */,
-				39F4338922F9212600ED1F06 /* SMGShowHudView.m in Sources */,
+				39C7980D22FC2D7800217E0E /* SMGMassageCell.m in Sources */,
+				39C7980222FC2D7700217E0E /* UIImage+smgImage.m in Sources */,
+				39C7980A22FC2D7800217E0E /* SMGLiveChooseButton.m in Sources */,
 				C8C907E622F5C203002A96B3 /* MASConstraint.m in Sources */,
 				C8C907F122F5C203002A96B3 /* RemoteMediaView.m in Sources */,
-				39F4338F22F9796400ED1F06 /* SMGRemoteMediaView.m in Sources */,
 				C8C907E922F5C203002A96B3 /* MASViewAttribute.m in Sources */,
 				C8C907FE22F5C203002A96B3 /* EntypoSymbol.m in Sources */,
 				C8C907FA22F5C203002A96B3 /* JTMaterialSwitch.m in Sources */,
-				39C797B622FBF6F100217E0E /* SMGSettingView.m in Sources */,
 				C8C907EE22F5C203002A96B3 /* ViewController+MASAdditions.m in Sources */,
-				39F4337822F8131200ED1F06 /* SMGLiveChooseButton.m in Sources */,
 				C8C907FC22F5C203002A96B3 /* MBProgressHUD.m in Sources */,
+				39C7980122FC2D7700217E0E /* SMGLiveHomeController.m in Sources */,
+				39C7980B22FC2D7800217E0E /* SMGShowHudView.m in Sources */,
 				C8C907EB22F5C203002A96B3 /* NSArray+MASAdditions.m in Sources */,
+				39C7980922FC2D7800217E0E /* SMGLiveHomeBackgroundView.m in Sources */,
+				39C7980C22FC2D7800217E0E /* SMGLiveChooseView.m in Sources */,
 				C8C907EF22F5C203002A96B3 /* MediaViewGroup.m in Sources */,
 				C8C907F622F5C203002A96B3 /* LHPerformanceMonitorService.m in Sources */,
 				C8C9070022F5C1C4002A96B3 /* ViewController.m in Sources */,
-				39F4337222F7FA5C00ED1F06 /* SMGLiveHomeBackgroundView.m in Sources */,
 				C8C907EA22F5C203002A96B3 /* MASViewConstraint.m in Sources */,
 				C8C907E822F5C203002A96B3 /* MASLayoutConstraint.m in Sources */,
 				C8C9080322F5C203002A96B3 /* UIImage+ImageEffects.m in Sources */,
 				C8C907E222F5C203002A96B3 /* LocalMediaView.m in Sources */,
 				C8C9080022F5C203002A96B3 /* MaterialDesignSymbol.m in Sources */,
 				C8C907E422F5C203002A96B3 /* LoginViewController.m in Sources */,
-				39F4338C22F9500C00ED1F06 /* SMGLocalMediaView.m in Sources */,
 				C8C907ED22F5C203002A96B3 /* View+MASAdditions.m in Sources */,
 				C8C9080422F5C203002A96B3 /* UIControl+YYAdd.m in Sources */,
+				39C7980822FC2D7800217E0E /* SMGLocalMediaView.m in Sources */,
 				C8C9080122F5C203002A96B3 /* TWSReleaseNotesDownloadOperation.m in Sources */,
-				39C797B922FC0CA700217E0E /* SMGMassageCell.m in Sources */,
 				C8C9080522F5C203002A96B3 /* UIView+YYAdd.m in Sources */,
-				39F4337B22F82EFC00ED1F06 /* SMGLiveRoomController.m in Sources */,
-				39F4337522F80B5200ED1F06 /* SMGLiveChooseView.m in Sources */,
 				C8C907F522F5C203002A96B3 /* LHPerformanceLabel.m in Sources */,
 				C8C907E522F5C203002A96B3 /* MASCompositeConstraint.m in Sources */,
 				C8C907F422F5C203002A96B3 /* LHPerformanceConfig.m in Sources */,
 				C8C907F222F5C203002A96B3 /* RoomVC.m in Sources */,
 				C8C907F922F5C203002A96B3 /* ConsoleTextView.m in Sources */,
 				C8C907F722F5C203002A96B3 /* LHPerformanceStatusBar.m in Sources */,
-				39C797B322FAD8B100217E0E /* SMGMassageView.m in Sources */,
-				39F4336622F7ECF200ED1F06 /* SMGLiveHomeController.m in Sources */,
 				C8C907EC22F5C203002A96B3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				C8C907E722F5C203002A96B3 /* MASConstraintMaker.m in Sources */,
+				39C7980022FC2D7700217E0E /* SMGLiveRoomController.m in Sources */,
+				39C7980722FC2D7800217E0E /* SMGSettingView.m in Sources */,
+				39C7980622FC2D7800217E0E /* SMGRemoteMediaView.m in Sources */,
 				C8C9070B22F5C1C4002A96B3 /* main.m in Sources */,
+				39C7980E22FC2D7800217E0E /* SMGMassageView.m in Sources */,
 				C8C907F822F5C203002A96B3 /* LHPerformanceUtil.m in Sources */,
 				C8C907E322F5C203002A96B3 /* LoginView.m in Sources */,
 				C8C906FD22F5C1C4002A96B3 /* AppDelegate.m in Sources */,
@@ -788,6 +794,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DSXLive/Demo/Frameworks",
 					"$(PROJECT_DIR)/DSXLive/连线/Frameworks",
+					"$(PROJECT_DIR)/\\ connect\\ /Frameworks",
+					"$(PROJECT_DIR)/\\ connect\\ /Frameworks",
+					"$(PROJECT_DIR)/\\ connect\\ /Frameworks",
+					"$(PROJECT_DIR)/\\ connect\\ /Frameworks",
 				);
 				INFOPLIST_FILE = DSXLive/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -810,6 +820,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DSXLive/Demo/Frameworks",
 					"$(PROJECT_DIR)/DSXLive/连线/Frameworks",
+					"$(PROJECT_DIR)/\\ connect\\ /Frameworks",
+					"$(PROJECT_DIR)/\\ connect\\ /Frameworks",
+					"$(PROJECT_DIR)/\\ connect\\ /Frameworks",
+					"$(PROJECT_DIR)/\\ connect\\ /Frameworks",
 				);
 				INFOPLIST_FILE = DSXLive/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

@@ -211,7 +211,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39F4336022F7DB6300ED1F06 /* 连线 */ = {
+		39F4336022F7DB6300ED1F06 /*  connect  */ = {
 			isa = PBXGroup;
 			children = (
 				39F4336722F7EF3000ED1F06 /* Resource */,
@@ -220,7 +220,7 @@
 				39F4336222F7DB6300ED1F06 /* Model */,
 				39F4336322F7DB6300ED1F06 /* Views */,
 			);
-			path = "连线";
+			path = " connect ";
 			sourceTree = "<group>";
 		};
 		39F4336122F7DB6300ED1F06 /* Controller */ = {
@@ -297,7 +297,7 @@
 		C8C906FA22F5C1C4002A96B3 /* DSXLive */ = {
 			isa = PBXGroup;
 			children = (
-				39F4336022F7DB6300ED1F06 /* 连线 */,
+				39F4336022F7DB6300ED1F06 /*  connect  */,
 				C8C9075E22F5C1DB002A96B3 /* Demo */,
 				C8C906FB22F5C1C4002A96B3 /* AppDelegate.h */,
 				C8C906FC22F5C1C4002A96B3 /* AppDelegate.m */,

@@ -26,6 +26,7 @@
 		39C7981022FC2D8400217E0E /* VSRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797E922FC2D7700217E0E /* VSRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39C7981122FC2D8700217E0E /* KSCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797EA22FC2D7700217E0E /* KSCrash.framework */; };
 		39C7981222FC2D8700217E0E /* KSCrash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797EA22FC2D7700217E0E /* KSCrash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		39C7981522FCFF0F00217E0E /* SMGHostPrivateTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C7981422FCFF0F00217E0E /* SMGHostPrivateTalk.m */; };
 		C8C906FD22F5C1C4002A96B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C906FC22F5C1C4002A96B3 /* AppDelegate.m */; };
 		C8C9070022F5C1C4002A96B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C906FF22F5C1C4002A96B3 /* ViewController.m */; };
 		C8C9070322F5C1C4002A96B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C9070122F5C1C4002A96B3 /* Main.storyboard */; };
@@ -114,6 +115,8 @@
 		39C797FD22FC2D7700217E0E /* SMGLiveChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGLiveChooseView.m; sourceTree = "<group>"; };
 		39C797FE22FC2D7700217E0E /* SMGMassageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGMassageCell.m; sourceTree = "<group>"; };
 		39C797FF22FC2D7700217E0E /* SMGMassageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMGMassageView.m; sourceTree = "<group>"; };
+		39C7981322FCFF0F00217E0E /* SMGHostPrivateTalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMGHostPrivateTalk.h; sourceTree = "<group>"; };
+		39C7981422FCFF0F00217E0E /* SMGHostPrivateTalk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMGHostPrivateTalk.m; sourceTree = "<group>"; };
 		C8C906F822F5C1C4002A96B3 /* DSXLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSXLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C906FB22F5C1C4002A96B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C8C906FC22F5C1C4002A96B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -246,6 +249,8 @@
 				39C797E522FC2D7700217E0E /* UIImage+smgImage.m */,
 				39C797E622FC2D7700217E0E /* SMGConst.h */,
 				39C797E722FC2D7700217E0E /* UIImage+smgImage.h */,
+				39C7981322FCFF0F00217E0E /* SMGHostPrivateTalk.h */,
+				39C7981422FCFF0F00217E0E /* SMGHostPrivateTalk.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -607,6 +612,7 @@
 				C8C907FB22F5C203002A96B3 /* MaterialDesignColor.m in Sources */,
 				C8C9080222F5C203002A96B3 /* TWSReleaseNotesView.m in Sources */,
 				C8C907F322F5C203002A96B3 /* ScannerVC.m in Sources */,
+				39C7981522FCFF0F00217E0E /* SMGHostPrivateTalk.m in Sources */,
 				39C7980D22FC2D7800217E0E /* SMGMassageCell.m in Sources */,
 				39C7980222FC2D7700217E0E /* UIImage+smgImage.m in Sources */,
 				39C7980A22FC2D7800217E0E /* SMGLiveChooseButton.m in Sources */,

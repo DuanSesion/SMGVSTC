@@ -28,13 +28,12 @@
 }
 
 - (void)dealloc {
-    [self.media Unpublish];
+    [self closeTalk];
 }
 
 - (VSMedia *)media {
+    NSArray *users = [[VSRTC sharedInstance] getMemberList];
     if (!_media) {
-        NSArray *users = [[VSRTC sharedInstance] getMemberList];
-        //    VSRoomUser *user = [[VSRTC sharedInstance] getSession];
         for (VSRoomUser *user in users) {
             NSDictionary *dic = user.custom;
             NSDictionary *extend = dic[@"extend"];
@@ -64,7 +63,10 @@
 }
 
 - (void)closeTalk {
-    [self.media Unsubscribe];
+    if ([self.media stream_state] == VS_MEDIA_STREAM_STARTING||
+        [self.media stream_state] == VS_MEDIA_STREAM_STARTED) {
+        [self.media Unsubscribe];
+    }
 }
 
 - (void)updateTalk {
@@ -120,9 +122,6 @@
 }
 
 - (void)OnStreamStarted:(uint64_t)streamId {
-    //    VSMedia *captureMedia = [[VSRTC sharedInstance] CreateCaptureMedia];
-    //    NSLog(@"<<<<<<<<<< %@", [captureMedia getStats]);
-    NSLog(@"<<<<<<<<<<>>>>>>>>>>>>>>  %llu", streamId);
     [self updateStram];
 }
 

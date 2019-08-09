@@ -103,7 +103,9 @@ CGFloat PLWIDTH  = 115.f;
 }
 
 - (void)OnClose {
-    [_media Unsubscribe];
+    if ([_media type] == VS_MEDIA_OPENED) {
+        [_media Unsubscribe];
+    }
 }
 
 - (void)OnError:(NSString *)errDesc {

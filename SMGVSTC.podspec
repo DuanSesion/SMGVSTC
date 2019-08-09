@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SMGVSTC"
-  s.version      = "master"
+  s.version      = "1.0.0"
   s.platform     = :ios, "8.0"
-  s.summary      = "A short description of SMGVSTC."
+  #s.summary      = "A short description of SMGVSTC."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT 11111"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -53,7 +53,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "duan" => "dalizhiyan@@qq.com" }
+  s.author             = { "duan" => "dalizhiyan@qq.com" }
   # Or just: s.author    = "duan"
   # s.authors            = { "duan" => "dalizhiyan@@qq.com" }
   # s.social_media_url   = "http://twitter.com/duan"
@@ -91,8 +91,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "connect", "connect/**/*.{h,m}"
+  #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 

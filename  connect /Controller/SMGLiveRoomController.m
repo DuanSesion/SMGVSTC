@@ -19,6 +19,7 @@
 #import "UIImage+smgImage.h"
 #import "SMGMassageView.h"
 #import "SMGSettingView.h"
+#import "SMGHostPrivateTalk.h"
 
 @interface SMGLiveRoomController ()<VSChatHandler, SMGLocalMediaDelegate, SMGSettingDelegate>
 {
@@ -56,8 +57,10 @@
 @property (nonatomic, weak) SMGRemoteMediaView *remoteMediaView;
 // 消息对话
 @property (nonatomic, weak) SMGMassageView *massageView;
-/** 私信 */
+/** 消息 */
 @property (nonatomic, strong) VSChat *chatChannel;
+/** 私信 */
+@property (nonatomic, strong) SMGHostPrivateTalk *privateTalk;
 
 @end
 
@@ -112,7 +115,6 @@
 // 退出
 - (void)remove {
     [[VSRTC sharedInstance] leaveRoom];
-    [[VSRTC sharedInstance] DestroyScreenMedia];
     [_chatChannel Close];
     [_localMediaView remove];
     
@@ -325,6 +327,13 @@
     return _chatChannel;
 }
 
+- (SMGHostPrivateTalk *)privateTalk {
+    if (!_privateTalk) {
+        _privateTalk = [[SMGHostPrivateTalk alloc] init];
+    }
+    return _privateTalk;
+}
+
 - (void)setup {
     self.view.backgroundColor = [UIColor blackColor];
     _streamBitrate = 720;
@@ -531,8 +540,16 @@
         [SMGShowHudView smgShowHandelWithView:self.view];
     }
     
+    // 准备组
+    BOOL video2prepare = [extend[@"video2prepare"] boolValue];
+    // 播放组
+    BOOL video2playout = [extend[@"video2playout"] boolValue];
+    VSMedia *captureMedia = [[VSRTC sharedInstance] CreateCaptureMedia];
+    VSRoomUser *user = [[VSRTC sharedInstance] getSession];
+    
+    // 私聊
     BOOL talk = [extend[@"talkToHost"][@"talk"] boolValue];
-    if (talk) {// 私聊
+    if (talk && !video2playout) {
         self.privateButton.hidden = NO;
         [self openPrivateTalk];
         
@@ -540,11 +557,6 @@
         self.privateButton.hidden = YES;
         [self closePrivateTalk];
     }
-    
-    BOOL video2prepare = [extend[@"video2prepare"] boolValue];
-    BOOL video2playout = [extend[@"video2playout"] boolValue];
-    VSMedia *captureMedia = [[VSRTC sharedInstance] CreateCaptureMedia];
-    VSRoomUser *user = [[VSRTC sharedInstance] getSession];
     
     if (video2prepare) {
         self.label.text = @"PREPARE";
@@ -592,10 +604,24 @@
 
 - (void)onMemberUpdate:(VSRoomUser*)user {
     [self.remoteMediaView getHostVideo];
+    
+    // 责编进入
+    NSDictionary *dic = user.custom;
+    NSDictionary *extend = dic[@"extend"];
+    NSString *room_active_role = extend[@"room_active_role"];
+    if ([room_active_role isEqualToString:@"host"] && user.stream_id) {
+        [self.privateTalk updateTalk];
+    }
 }
 
 - (void)onMemberLeave:(VSRoomUser*)user {
-    NSLog(@"====");
+    // 责编离开
+    NSDictionary *dic = user.custom;
+    NSDictionary *extend = dic[@"extend"];
+    NSString *room_active_role = extend[@"room_active_role"];
+    if ([room_active_role isEqualToString:@"host"]) {
+        [self closePrivateTalk];
+    }
 }
 
 - (void)onPartnerScanedScode {
@@ -647,40 +673,11 @@
 
 #pragma mark - open private Talk
 - (void)openPrivateTalk { // 责编私聊
-    NSArray *users = [[VSRTC sharedInstance] getMemberList];
-//    VSRoomUser *user = [[VSRTC sharedInstance] getSession];
-    
-    [users enumerateObjectsUsingBlock:^(VSRoomUser *user, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSDictionary *dic = user.custom;
-        NSDictionary *extend = dic[@"extend"];
-        NSString *room_active_role = extend[@"room_active_role"];
-        
-            if ([user stream_id] && [room_active_role containsString:@"host"]) {
-                VSMedia *media = [[VSRTC sharedInstance] FindRemoteMedia:[user stream_id]];
-                if (!media) {
-                    media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] reuseExist:YES];
-                }
-                [media SetEventHandler:self];
-                [media OpenWithVideo:NO andAudio:YES];
-                [media Publish:NO streamBitrate:_streamBitrate stramLabel:user.userId];
-            }
-     }];
+    [self.privateTalk openTalk];
 }
 
 - (void)closePrivateTalk { // 关闭私聊
-    NSArray *users = [[VSRTC sharedInstance] getMemberList];
-    [users enumerateObjectsUsingBlock:^(VSRoomUser *user, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSDictionary *dic = user.custom;
-        NSDictionary *extend = dic[@"extend"];
-        NSString *room_active_role = extend[@"room_active_role"];
-        
-        if ([user stream_id] && [room_active_role containsString:@"host"]) {
-            VSMedia *media = [[VSRTC sharedInstance] FindRemoteMedia:[user stream_id]];
-            [media EnableAudio:NO];
-            [media EnableVideo:NO];
-            [media Close];
-        }
-    }];
+    [self.privateTalk closeTalk];
 }
  
 @end

@@ -247,8 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				39C797E522FC2D7700217E0E /* UIImage+smgImage.m */,
-				39C797E622FC2D7700217E0E /* SMGConst.h */,
 				39C797E722FC2D7700217E0E /* UIImage+smgImage.h */,
+				39C797E622FC2D7700217E0E /* SMGConst.h */,
 				39C7981322FCFF0F00217E0E /* SMGHostPrivateTalk.h */,
 				39C7981422FCFF0F00217E0E /* SMGHostPrivateTalk.m */,
 			);

@@ -18,7 +18,6 @@ CGFloat PLWIDTH  = 115.f;
 
 @interface SMGRemoteMediaView ()<VSMediaEventHandler> {
     VSMedia *_media;
-    
 }
 
 @property (nonatomic, weak) SMGShowHudView *hud;
@@ -35,6 +34,10 @@ CGFloat PLWIDTH  = 115.f;
     return self;
 }
 
+- (void)dealloc {
+    [self OnClose];
+}
+
 - (SMGShowHudView *)hud {
     if (!_hud) {
         SMGShowHudView *hud = [SMGShowHudView smgShowLoading:@"正在缓冲..." view:self];
@@ -47,18 +50,16 @@ CGFloat PLWIDTH  = 115.f;
     self.backgroundColor = [UIColor clearColor];
     [self getHostVideo];
     self.userInteractionEnabled = NO;
-    
 }
 
 // 获取主持人直播画面
 - (void)getHostVideo {
+    [_media Unsubscribe];
     NSArray *users = [[VSRTC sharedInstance] getMemberList];
     [users enumerateObjectsUsingBlock:^(VSRoomUser *user, NSUInteger idx, BOOL * _Nonnull stop) {
         NSDictionary *dic = user.custom;
         NSDictionary *extend = dic[@"extend"];
         NSString *room_active_role = extend[@"room_active_role"];
-       
-        // [room_active_role isEqualToString:@"remix"] &&
         
         if ( [user stream_id] && [room_active_role containsString:@"remix"]) {
             VSMedia *media = [[VSRTC sharedInstance] FindRemoteMedia:[user stream_id]];
@@ -68,16 +69,13 @@ CGFloat PLWIDTH  = 115.f;
             _media = media;
             [media SetEventHandler:self];
             [media OpenWithVideo:YES andAudio:YES];
-            [media Restart];
          
-            
             [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
             UIView *render_view = [media render_view];
             render_view.backgroundColor = [UIColor clearColor];
             render_view.userInteractionEnabled = YES;
             [self addSubview:render_view];
             [self bringSubviewToFront:self.hud];
-//            [self bringSubviewToFront:self.changeButton];
             
             [render_view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 obj.backgroundColor = [UIColor clearColor];
@@ -101,11 +99,11 @@ CGFloat PLWIDTH  = 115.f;
 }
 
 - (void)OnOpened {
-    
+     [_media Subscribe];
 }
 
 - (void)OnClose {
-    
+    [_media Unsubscribe];
 }
 
 - (void)OnError:(NSString *)errDesc {

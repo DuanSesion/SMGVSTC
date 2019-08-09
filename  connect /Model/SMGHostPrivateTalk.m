@@ -14,6 +14,7 @@
 @interface SMGHostPrivateTalk ()<VSMediaEventHandler>
 
 @property (nonatomic, strong) VSMedia *media;
+@property (nonatomic, strong) VSRoomUser *user;
 
 @end
 
@@ -26,6 +27,10 @@
     return self;
 }
 
+- (void)dealloc {
+    [self.media Unpublish];
+}
+
 - (VSMedia *)media {
     if (!_media) {
         NSArray *users = [[VSRTC sharedInstance] getMemberList];
@@ -35,17 +40,18 @@
             NSDictionary *extend = dic[@"extend"];
             NSString *room_active_role = extend[@"room_active_role"];
             
-            if ([user stream_id] && [room_active_role containsString:@"host"]) {
+            if ([user stream_id] && [room_active_role isEqualToString:@"host"]) {
                 VSMedia *media = [[VSRTC sharedInstance] FindRemoteMedia:[user stream_id]];
                 if (!media) {
                     media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] reuseExist:YES];
                 }
                 [media SetEventHandler:self];
-                [media OpenWithVideo:NO andAudio:YES];
                 _media = media;
+                _user  = user;
             }
         }
     }
+
     return _media;
 }
 
@@ -54,9 +60,18 @@
 }
 
 - (void)openTalk {
-             [media Publish:NO streamBitrate:_streamBitrate stramLabel:user.userId];
+    [self.media OpenWithVideo:NO andAudio:YES];
 }
-- (void)closeTalk;
+
+- (void)closeTalk {
+    [self.media Unsubscribe];
+}
+
+- (void)updateTalk {
+    [_media Unsubscribe];
+    _media = nil;
+    [self openTalk];
+}
 
 #pragma mark - updateStreming
 - (void)updateStram {
@@ -85,7 +100,7 @@
 }
 
 - (void)OnOpened {
-    
+    [self.media Subscribe];
 }
 
 - (void)OnClose {

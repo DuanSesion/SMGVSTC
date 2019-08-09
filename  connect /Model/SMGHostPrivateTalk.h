@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)openTalk;
 - (void)closeTalk;
+- (void)updateTalk;
 
 @end
 

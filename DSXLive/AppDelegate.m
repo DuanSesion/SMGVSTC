@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
 #import <VSRTC/VSRTC.h>
 #import "SMGLiveHomeController.h"
 

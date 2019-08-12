@@ -223,6 +223,7 @@
         if (error == nil) {
             NSLog(@"OK");
             SMGLiveRoomController *vc = [[SMGLiveRoomController alloc] init];
+            [[VSRTC sharedInstance] setObserver:vc];
             vc.chooseModelStyle = self.liveChooseView.chooseModelStyle;
             vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
             if (weakSelf.navigationController) {

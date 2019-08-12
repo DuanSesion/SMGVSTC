@@ -54,7 +54,6 @@ CGFloat PLWIDTH  = 115.f;
 
 // 获取主持人直播画面
 - (void)getHostVideo {
-    [_media Unsubscribe];
     NSArray *users = [[VSRTC sharedInstance] getMemberList];
     [users enumerateObjectsUsingBlock:^(VSRoomUser *user, NSUInteger idx, BOOL * _Nonnull stop) {
         NSDictionary *dic = user.custom;

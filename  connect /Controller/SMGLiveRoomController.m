@@ -360,7 +360,6 @@
         self.localMediaView.backgroundColor = [UIColor clearColor];
         [self.view bringSubviewToFront:self.contentView];
         [self.view bringSubviewToFront:self.remoteMediaView];
-        [self.chatChannel Open];
         [self initUILayouts];
         
     } else {
@@ -549,7 +548,7 @@
     
     // 私聊
     BOOL talk = [extend[@"talkToHost"][@"talk"] boolValue];
-    if (talk && !video2playout) {
+    if ((talk && !video2playout)) {
         self.privateButton.hidden = NO;
         [self openPrivateTalk];
         
@@ -563,16 +562,21 @@
         self.label.backgroundColor = SMGHEX_RGBA(0x41b48c, 1);
         [captureMedia Publish:NO streamBitrate:_streamBitrate stramLabel:user.userId];
         
+        [self.privateTalk removePlayoutList];
         
     } else if (video2playout) {
         self.label.text = @"PLAYOUT";
         self.label.backgroundColor = SMGHEX_RGBA(0xff555a, 1);
         [captureMedia Publish:NO streamBitrate:_streamBitrate stramLabel:user.userId];
         
+        // 播放组
+        [self.privateTalk createPlayouyList];
+        
     } else {
         self.label.backgroundColor = SMGHEX_RGBA(0x00000, 0.6);
         self.label.text = @"连接成功";
         [captureMedia Unpublish];
+        [self.privateTalk removePlayoutList];
     }
 }
 
@@ -600,6 +604,7 @@
 
 - (void)onMemberJoin:(VSRoomUser*)user {
     [self.remoteMediaView getHostVideo];
+   // [self.privateTalk addPlayoutUser:user];
 }
 
 - (void)onMemberUpdate:(VSRoomUser*)user {
@@ -609,8 +614,33 @@
     NSDictionary *dic = user.custom;
     NSDictionary *extend = dic[@"extend"];
     NSString *room_active_role = extend[@"room_active_role"];
-    if ([room_active_role isEqualToString:@"host"] && user.stream_id) {
-        [self.privateTalk updateTalk];
+    BOOL video2playout = [extend[@"video2playout"] boolValue];
+    
+    // 责编私聊通话
+    if (([room_active_role isEqualToString:@"host"] && user.stream_id)) {
+        self.privateTalk.user = user;
+        
+        // 责编是否打开公聊
+        BOOL broadcastToPrepare = [extend[@"hostRole"][@"broadcastToPrepare"] boolValue];
+        // 私聊
+        BOOL talk = [extend[@"talkToHost"][@"talk"] boolValue];
+        
+        if (talk || broadcastToPrepare) {
+            [self.privateTalk updateTalk];
+            
+        } else {
+            [self.privateTalk closeTalk];
+        }
+    }
+    
+    if ([room_active_role isEqualToString:@"guest"]) {
+        // 播放组通话
+        if (video2playout) {
+            [self.privateTalk addPlayoutUser:user];
+            
+        } else {
+            [self.privateTalk removePlayoutUser:user];
+        }
     }
 }
 
@@ -622,6 +652,8 @@
     if ([room_active_role isEqualToString:@"host"]) {
         [self closePrivateTalk];
     }
+    
+    [self.privateTalk removePlayoutUser:user];
 }
 
 - (void)onPartnerScanedScode {

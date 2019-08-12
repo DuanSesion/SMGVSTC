@@ -50,6 +50,7 @@
 
 - (void)setup {
     self.backgroundColor = [UIColor clearColor];
+    self.selectionStyle  = UITableViewCellSelectionStyleNone;
     [self.icon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(12.f);
         make.top.equalTo(self.contentView).offset(10.f);

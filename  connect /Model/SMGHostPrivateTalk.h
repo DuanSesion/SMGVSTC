@@ -7,12 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <VSRTC/VSRoomUser.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 // 主编私聊
 @interface SMGHostPrivateTalk : NSObject
 
+// 责编
+@property (nonatomic, strong) VSRoomUser *user;
+
+// 播放组playout联通话
+- (void)createPlayouyList;
+// 更新播放组信息(退出或加入)
+- (void)addPlayoutUser:(id)user;
+- (void)removePlayoutUser:(id)user;
+// 播放组释放
+- (void)removePlayoutList;
+
+// 责编私聊管理
 - (void)openTalk;
 - (void)closeTalk;
 - (void)updateTalk;

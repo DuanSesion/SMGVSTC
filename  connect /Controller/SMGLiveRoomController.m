@@ -121,6 +121,10 @@
     [_privateTalk.media Close];
     _privateTalk = nil;
     
+    if (self.chooseModelStyle == 0) {
+        [[VSRTC sharedInstance] DestroyCaptureMedia];
+    }
+    
     [UIApplication sharedApplication].idleTimerDisabled = NO;
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationPortrait] forKey:@"orientation"];
     [UIViewController attemptRotationToDeviceOrientation];
@@ -445,10 +449,11 @@
 }
 
 - (void)enterForeground:(NSNotification *)info {
-    [self remove];
-    
-    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (self.chooseModelStyle == 0) {
+        [self remove];
+        self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)buttonAction:(id)sender {

@@ -13,6 +13,14 @@
 #import "SMGLiveChooseView.h"
 #import "SMGShowHudView.h"
 
+@implementation UINavigationController (smg)
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+@end
+
 @interface SMGLiveHomeController ()
 <
    SMGLiveHomeBackgroundDelegate
@@ -49,6 +57,10 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
 #pragma mark - initView
 - (void)setNavgationBar {
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationPortrait] forKey:@"orientation"];
@@ -80,6 +92,10 @@
         CGFloat safeAreaInsetsHeight = 0.f;
         if (@available(iOS 11.0, *)) {
             safeAreaInsetsHeight = kSMGSafeAreaInsetsHeight;
+            
+            UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0.f, kSMGScreenHeight - safeAreaInsetsHeight, kSMGScreenWidth, safeAreaInsetsHeight)];
+            v.backgroundColor = [UIColor whiteColor];
+            [self.view addSubview:v];
         }
         [_joinButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self.view);
@@ -123,7 +139,7 @@
 
 - (void)setup {
     [[VSRTC sharedInstance] startup:@""];
-    [[VSRTC sharedInstance] startFileLog:[NSHomeDirectory() stringByAppendingString:@"/Documents/a.txt"]];
+    [[VSRTC sharedInstance] startFileLog:[NSHomeDirectory() stringByAppendingString:@"/Documents/LIVE_log.txt"]];
     
     // 头部背景
     self.backgroundView.hidden = NO;

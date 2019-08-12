@@ -10,8 +10,6 @@
 		39C7980022FC2D7700217E0E /* SMGLiveRoomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797E122FC2D7700217E0E /* SMGLiveRoomController.m */; };
 		39C7980122FC2D7700217E0E /* SMGLiveHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797E322FC2D7700217E0E /* SMGLiveHomeController.m */; };
 		39C7980222FC2D7700217E0E /* UIImage+smgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797E522FC2D7700217E0E /* UIImage+smgImage.m */; };
-		39C7980322FC2D7700217E0E /* VSRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797E922FC2D7700217E0E /* VSRTC.framework */; };
-		39C7980422FC2D7700217E0E /* KSCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797EA22FC2D7700217E0E /* KSCrash.framework */; };
 		39C7980522FC2D7800217E0E /* SMGImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 39C797EC22FC2D7700217E0E /* SMGImages.bundle */; };
 		39C7980622FC2D7800217E0E /* SMGRemoteMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797EE22FC2D7700217E0E /* SMGRemoteMediaView.m */; };
 		39C7980722FC2D7800217E0E /* SMGSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797EF22FC2D7700217E0E /* SMGSettingView.m */; };
@@ -22,9 +20,7 @@
 		39C7980C22FC2D7800217E0E /* SMGLiveChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797FD22FC2D7700217E0E /* SMGLiveChooseView.m */; };
 		39C7980D22FC2D7800217E0E /* SMGMassageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797FE22FC2D7700217E0E /* SMGMassageCell.m */; };
 		39C7980E22FC2D7800217E0E /* SMGMassageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C797FF22FC2D7700217E0E /* SMGMassageView.m */; };
-		39C7980F22FC2D8400217E0E /* VSRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797E922FC2D7700217E0E /* VSRTC.framework */; };
 		39C7981022FC2D8400217E0E /* VSRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797E922FC2D7700217E0E /* VSRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		39C7981122FC2D8700217E0E /* KSCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797EA22FC2D7700217E0E /* KSCrash.framework */; };
 		39C7981222FC2D8700217E0E /* KSCrash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39C797EA22FC2D7700217E0E /* KSCrash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39C7981522FCFF0F00217E0E /* SMGHostPrivateTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C7981422FCFF0F00217E0E /* SMGHostPrivateTalk.m */; };
 		C8C906FD22F5C1C4002A96B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C906FC22F5C1C4002A96B3 /* AppDelegate.m */; };
@@ -210,10 +206,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39C7981122FC2D8700217E0E /* KSCrash.framework in Frameworks */,
-				39C7980422FC2D7700217E0E /* KSCrash.framework in Frameworks */,
-				39C7980322FC2D7700217E0E /* VSRTC.framework in Frameworks */,
-				39C7980F22FC2D8400217E0E /* VSRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +553,7 @@
 		C8C906F022F5C1C4002A96B3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = xiong;
 				TargetAttributes = {
 					C8C906F722F5C1C4002A96B3 = {
@@ -698,6 +690,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -705,6 +698,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -753,6 +747,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -760,6 +755,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

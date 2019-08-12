@@ -117,6 +117,9 @@
     [[VSRTC sharedInstance] leaveRoom];
     [_chatChannel Close];
     [_localMediaView remove];
+    [_privateTalk removePlayoutList];
+    [_privateTalk.media Close];
+    _privateTalk = nil;
     
     [UIApplication sharedApplication].idleTimerDisabled = NO;
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationPortrait] forKey:@"orientation"];
@@ -129,7 +132,7 @@
 - (void)setNavgationBar {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         dispatch_async(dispatch_get_main_queue(), ^{});
-        _navgationBarHidden = self.navigationController.navigationBarHidden;
+        self->_navgationBarHidden = self.navigationController.navigationBarHidden;
         [self.navigationController setNavigationBarHidden:YES animated:NO];
     });
 }
@@ -341,6 +344,7 @@
     [self initWithVSRTC];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeActivity:) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -438,6 +442,13 @@
     [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeLeft] forKey:@"orientation"];
     [UIViewController attemptRotationToDeviceOrientation];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+- (void)enterForeground:(NSNotification *)info {
+    [self remove];
+    
+    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)buttonAction:(id)sender {
@@ -577,6 +588,7 @@
         self.label.text = @"连接成功";
         [captureMedia Unpublish];
         [self.privateTalk removePlayoutList];
+        [self closePrivateTalk];
     }
 }
 
@@ -620,12 +632,14 @@
     if (([room_active_role isEqualToString:@"host"] && user.stream_id)) {
         self.privateTalk.user = user;
         
-        // 责编是否打开公聊
+        // 责编是否打开公聊（准备组）
         BOOL broadcastToPrepare = [extend[@"hostRole"][@"broadcastToPrepare"] boolValue];
+        // 责编是否打开公聊（播放组）
+        BOOL broadcastToPlayout = [extend[@"hostRole"][@"broadcastToPlayout"] boolValue];
         // 私聊
         BOOL talk = [extend[@"talkToHost"][@"talk"] boolValue];
         
-        if (talk || broadcastToPrepare) {
+        if (talk || broadcastToPrepare || broadcastToPlayout) {
             [self.privateTalk updateTalk];
             
         } else {

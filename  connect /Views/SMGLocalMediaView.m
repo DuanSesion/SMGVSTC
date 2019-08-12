@@ -39,34 +39,6 @@
     self.timer = nil;
 }
 
-- (void)becomeActivity:(id)info {
-//    VSMedia *captureMedia = [[VSRTC sharedInstance] CreateCaptureMedia];
-//    [captureMedia SetEventHandler:self];
-//    if ([captureMedia state] == VS_MEDIA_CLOSED) {
-//        NSArray<VSVideoFormat *>* fmts = [captureMedia GetVideoFormats];
-//        VSVideoFormat *pref_fmt = nil;
-//        for (VSVideoFormat *fmt in fmts) {
-//            if (fmt.width == 1280 && !fmt.front) {
-//                pref_fmt = fmt;
-//                break;
-//            }
-//        }
-//        if (pref_fmt != nil) {
-//            [captureMedia SetPreferVideoFormat:pref_fmt];
-//        }
-//    }
-//    [captureMedia OpenWithVideo:YES andAudio:YES];
-}
-
-- (void)enterForeground:(id)info {
-    VSMedia *captureMedia = [[VSRTC sharedInstance] CreateCaptureMedia];
-    [captureMedia Close];
-    
-    UIViewController *vc = (id)self.delegate;
-    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [vc dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (NSTimer *)timer {
     if (!_timer) {
         NSTimer *timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
@@ -96,8 +68,6 @@
 - (void)setup {
     self.userInteractionEnabled = NO;
     self.backgroundColor = [UIColor clearColor];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeActivity:) name:UIApplicationDidBecomeActiveNotification object:nil];
     
     VSMedia *captureMedia = [[VSRTC sharedInstance] CreateCaptureMedia];
     [captureMedia SetEventHandler:self];

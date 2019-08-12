@@ -8,12 +8,10 @@
 
 #import "SMGHostPrivateTalk.h"
 #import <VSRTC/VSRTC.h>
-#import <VSRTC/VSMedia.h>
 
 @interface SMGHostPrivateTalk ()<VSMediaEventHandler>
 
 @property (nonatomic, strong) NSMutableArray <VSRoomUser*>*playouyList;
-@property (nonatomic, strong) VSMedia *media;
 
 @end
 
@@ -46,8 +44,10 @@
             NSDictionary *dic = user.custom;
             NSDictionary *extend = dic[@"extend"];
             NSString *room_active_role = extend[@"room_active_role"];
-            // 公开聊
+            // 公开聊 (准备组）
             BOOL broadcastToPrepare = [extend[@"hostRole"][@"broadcastToPrepare"] boolValue];
+            // (播放组）
+            BOOL broadcastToPlayout = [extend[@"hostRole"][@"broadcastToPlayout"] boolValue];
             
             if ([user stream_id] && [room_active_role isEqualToString:@"host"]) {
                 VSMedia *media = [[VSRTC sharedInstance] FindRemoteMedia:[user stream_id]];
@@ -56,7 +56,8 @@
                 }
                 [media SetEventHandler:self];
                 
-                if (broadcastToPrepare) {
+                if ((broadcastToPrepare && [self video2prepare])
+                    || (broadcastToPlayout && [self video2playout])) {
                     [media OpenWithVideo:NO andAudio:YES];
                 }
                 
@@ -65,7 +66,6 @@
             }
         }
     }
-
     return _media;
 }
 
@@ -79,9 +79,13 @@
 
 - (void)closeTalk {
     NSDictionary *extend = self.user.custom[@"extend"];
-    // 公开聊
+    // 公开聊（准备组）
     BOOL broadcastToPrepare = [extend[@"hostRole"][@"broadcastToPrepare"] boolValue];
-    if (!broadcastToPrepare) {
+    // 播放组
+    BOOL broadcastToPlayout = [extend[@"hostRole"][@"broadcastToPlayout"] boolValue];
+    
+    if ((!broadcastToPrepare && !broadcastToPlayout) ||
+        (![self video2prepare] && ![self video2playout])) {
         if ([self.media stream_state] == VS_MEDIA_STREAM_STARTING||
             [self.media stream_state] == VS_MEDIA_STREAM_STARTED) {
             [self.media Close];
@@ -158,6 +162,20 @@
     [self.playouyList removeAllObjects];
 }
 
+- (BOOL)video2prepare {
+    VSRoomUser *myuser = [[VSRTC sharedInstance] getSession];
+    NSDictionary *extend = myuser.custom[@"extend"];
+    // 准备组
+    BOOL video2prepare = [extend[@"video2prepare"] boolValue];
+    return video2prepare;
+}
+
+- (BOOL)video2playout {
+    VSRoomUser *myuser = [[VSRTC sharedInstance] getSession];
+    NSDictionary *extend = myuser.custom[@"extend"];
+    BOOL video2playout = [extend[@"video2playout"] boolValue];
+    return video2playout;
+}
 
 #pragma mark - updateStreming
 - (void)updateStram {

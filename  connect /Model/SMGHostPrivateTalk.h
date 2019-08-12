@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <VSRTC/VSRoomUser.h>
+#import <VSRTC/VSMedia.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 责编
 @property (nonatomic, strong) VSRoomUser *user;
+@property (nonatomic, strong) VSMedia *media;
 
 // 播放组playout联通话
 - (void)createPlayouyList;
@@ -29,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)openTalk;
 - (void)closeTalk;
 - (void)updateTalk;
+
+// 当前用户状态
+- (BOOL)video2prepare;
+- (BOOL)video2playout;
 
 @end
 

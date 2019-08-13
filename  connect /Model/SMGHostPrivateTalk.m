@@ -52,7 +52,7 @@
             if ([user stream_id] && [room_active_role isEqualToString:@"host"]) {
                 VSMedia *media = [[VSRTC sharedInstance] FindRemoteMedia:[user stream_id]];
                 if (!media) {
-                    media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] reuseExist:YES];
+                    media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] withTag:kStreamTagScreen andUser:user.userId];
                 }
                 [media SetEventHandler:self];
                 
@@ -117,7 +117,7 @@
                 if ([user stream_id] && video2playout && [room_active_role isEqualToString:@"guest"]) {
                     VSMedia *media = [[VSRTC sharedInstance] FindRemoteMedia:[user stream_id]];
                     if (!media) {
-                        media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] reuseExist:YES];
+                        media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] withTag:kStreamTagScreen andUser:user.userId];
                     }
                     [media SetEventHandler:self];
                     [media OpenWithVideo:NO andAudio:YES];
@@ -144,7 +144,7 @@
     
     VSMedia *media = [[VSRTC sharedInstance] FindRemoteMedia:[user stream_id]];
     if (!media) {
-        media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] reuseExist:YES];
+        media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] withTag:kStreamTagScreen andUser:user.userId];
     }
     if ([user stream_id] && video2playout && [room_active_role isEqualToString:@"guest"]) {
         [media SetEventHandler:self];

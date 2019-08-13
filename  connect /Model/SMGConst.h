@@ -17,7 +17,8 @@
 #define PRD_RMS_URL             @"https://ops.smgtech.net"
 #define PRD_VRX_URL             @"https://vrx.smgtech.net"
 #define PRD_ILS_URL             @"https://ils.smgtech.net"
-#define PRD_VSU_URL             @"https://sfu.smgtech.net:8089/janus"
+#define PRD_VSU_URL             @"https://sfu.smgtech.net"
+// @"https://sfu.smgtech.net:8089/janus"
 
 #define SGMImage(image) [UIImage imageNamed:[NSString stringWithFormat:@"SMGImages.bundle/%@", image]]
 #define SMGHEX_RGBA(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]

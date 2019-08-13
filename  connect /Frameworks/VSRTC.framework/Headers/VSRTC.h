@@ -103,7 +103,7 @@ VSV_EXPORT
 - (VSVideoConfig*)QueryVideoConfiger:(VSMedia*)media;
 - (void)EnableSpeakerPhone:(BOOL)enable;
 
-- (VSMedia *)CreateRemoteMedia:(uint64_t)streamId reuseExist:(BOOL)reuse;
+- (VSMedia *)CreateRemoteMedia:(uint64_t)streamId withTag:(NSString*)tag andUser:(NSString*)userId;
 - (VSMedia *)FindRemoteMedia:(uint64_t)streamId;
 - (void)DestroyRemoteMedia:(uint64_t)mediaId;
 

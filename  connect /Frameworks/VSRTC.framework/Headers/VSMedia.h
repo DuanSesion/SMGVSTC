@@ -10,6 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+static NSString * const kStreamTagCamera = @"camera";
+static NSString * const kStreamTagScreen = @"screen";
+
 typedef NS_ENUM(NSInteger, VSMediaType) {
   VS_MEDIA_CAPTURE,
   VS_MEDIA_SCREEN,

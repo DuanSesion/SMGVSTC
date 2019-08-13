@@ -63,9 +63,9 @@ CGFloat PLWIDTH  = 115.f;
         if ( [user stream_id] && [room_active_role containsString:@"remix"]) {
             VSMedia *media = [[VSRTC sharedInstance] FindRemoteMedia:[user stream_id]];
             if (!media) {
-                media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] reuseExist:YES];
+                media = [[VSRTC sharedInstance] CreateRemoteMedia:[user stream_id] withTag:kStreamTagScreen andUser:user.userId];
             }
-            _media = media;
+            self->_media = media;
             [media SetEventHandler:self];
             [media OpenWithVideo:YES andAudio:YES];
          
